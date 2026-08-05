@@ -1,11 +1,10 @@
-print("Calcular a média de uma lista de números")
-def calcular_media(numeros):
-	if not numeros:
-		return 0
-	return sum(numeros) / len(numeros)
-
-print("Informe uma lista de números separados por vírgula:")
-entrada = input()
-lista_numeros = [float(num.strip()) for num in entrada.split(",")]
-media = calcular_media(lista_numeros)
-print(f"A média dos números informados é: {media:.2f}")
+soma = 0
+total = 0
+while True:
+	numero = int(input("Digite um número (0 para sair): "))
+	if numero == 0:
+		break
+	soma += numero
+	total += 1
+print(f"Soma total: {soma}")
+print(f"Média: {soma / total if total != 0 else 0:.2f}")

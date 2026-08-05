@@ -1,5 +1,4 @@
-print("Calcula o volume de uma esfera")
-raio = float(input("Digite o raio da esfera: "))
-pi = 3.14159	
-volume = (4/3) * pi * (raio ** 3)
-print(f"O volume da esfera com raio {raio} é: {volume:.2f}")
+print("Volume de uma esfera")
+raio = float(input("Digite o raio da esfera (m): "))
+volume = (4/3) * 3.14159 * raio**3
+print(f"O volume da esfera é: {volume:.2f} m³")

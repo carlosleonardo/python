@@ -1,9 +1,9 @@
-print("Extrair Artigos")
 import re
-texto = input("Digite um texto para extrair os artigos: ")
-artigos = re.findall(r"\b(o|a|os|as)\b", texto, re.IGNORECASE)
-if artigos:
-	print("Artigos encontrados:", ", ".join(artigos))
-else:
-	print("Nenhum artigo encontrado.")
-print("Texto sem os artigos:", re.sub(r"\b(o|a|os|as)\b", "", texto, flags=re.IGNORECASE).strip())
+
+print("Extrair artigos de uma frase")
+frase = input("Digite uma frase: ")
+artigos = re.findall(r'\b(?:o|a|os|as|um|uma|uns|umas)\b', frase, re.IGNORECASE)
+print(f"Os artigos da frase são: {artigos}")
+# mostra a frase sem os artigos
+frase_sem_artigos = re.sub(r'\b(?:o|a|os|as|um|uma|uns|umas)\b', '', frase, flags=re.IGNORECASE)
+print(f"A frase sem os artigos é: {frase_sem_artigos.strip()}")

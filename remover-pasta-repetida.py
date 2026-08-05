@@ -1,18 +1,19 @@
-def remover_pasta_repetida(pastaRaiz, pastaRepetida):
-	import os
-	for root, dirs, files in os.walk(pastaRaiz):
-		for dir in dirs:
-			if dir == pastaRepetida:
-				caminho_completo = os.path.join(root, dir)
-				try:
-					os.rmdir(caminho_completo)
-					print(f"Pasta '{caminho_completo}' removida com sucesso.")
-				except OSError as e:
-					print(f"Erro ao remover a pasta '{caminho_completo}': {e}")
+import os
+import shutil
 
-# Exemplo de uso:
-pastaRaiz = input("Digite o caminho da pasta raiz: ")
-pastaRepetida = input("Digite o nome da pasta repetida a ser removida: ")
-remover_pasta_repetida(pastaRaiz, pastaRepetida)
-	
-	
+
+def remove_folder(root_path, folder_name):
+	"""Remove all occurrences of a folder in a directory hierarchy"""
+	for dirpath, dirnames, filenames in os.walk(root_path):
+		if folder_name in dirnames:
+			folder_path = os.path.join(dirpath, folder_name)
+			shutil.rmtree(folder_path)
+			print(f"Removed: {folder_path}")
+			dirnames.remove(folder_name)  # Prevent descending into removed folder
+
+# Usage
+root_path = input("Entre o caminho da pasta raiz: ")
+folder_to_remove = input("Entre o nome da pasta a remover: ")
+
+remove_folder(root_path, folder_to_remove)
+print("Done!")
