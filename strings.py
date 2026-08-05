@@ -1,0 +1,13 @@
+texto = "Olá, Mundo"
+print(texto)
+print(texto.upper())
+print(texto.lower())
+print(texto.capitalize())
+print(texto.replace("Mundo", "Python"))
+print(texto.split(","))
+print(texto[0])
+print(texto[1:5])
+print(texto[-1])
+print(texto.startswith("Olá"))
+print(texto.endswith("Mundo"))
+print("Mundo" in texto)
