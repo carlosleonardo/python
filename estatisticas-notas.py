@@ -6,8 +6,12 @@ while True:
         if nota == "-1":
             break
         try:
-            notas.append(float(nota))
-            # Calcula e exibe as estatísticas após cada entrada válida
+            numero = float(nota)
+            if 0 <= numero <= 10:
+                notas.append(numero)
+                # Calcula e exibe as estatísticas após cada entrada válida
+            else:
+                print("Por favor, digite uma nota entre 0 e 10.")
         except ValueError:
             print("Por favor, digite uma nota válida.")
 	
