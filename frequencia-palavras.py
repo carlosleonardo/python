@@ -1,9 +1,12 @@
-import re
+from tokenizer import split_into_sentences
 
+print("Contagem de Frequência de Palavras")
 while True:
-    print("Frequência de Palavras")
     texto = input("Digite um texto: ")
-    palavras = re.findall(r'\b\w+\b', texto)
+    palavras = split_into_sentences(texto)
+    palavras = [palavra for frase in palavras for palavra in frase.split()]
+    simbolos = set(".,!?;:()[]{}\"'")
+    palavras = [palavra for palavra in palavras if palavra not in simbolos and palavra != '']
     frequencia = {}
     for palavra in palavras:
         if palavra in frequencia:
