@@ -5,6 +5,8 @@ while True:
     texto = input("Digite um texto: ")
     palavras = split_into_sentences(texto)
     palavras = [palavra for frase in palavras for palavra in frase.split()]
+    simbolos = set(".,!?;:()[]{}\"'")
+    palavras = [palavra for palavra in palavras if palavra not in simbolos and palavra != '']
     frequencia = {}
     for palavra in palavras:
         if palavra in frequencia:
